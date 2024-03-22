@@ -69,8 +69,13 @@ docker pull tensorflow/serving
 ```bash
 docker run -it -v F:/Project/Deep_learning/potato-disease-classification/Test/model:/tomatoes-model -p 8601:8601 --entrypoint /bin/bash tensorflow/serving
 ```
-
-4. Run the FastAPI Server using uvicorn
+```bash
+tensorflow_model_server --rest_api_port=8601  --allow_version_labels_for_unavailable_models --model_config_file=/tomatoes-model/modelsConfig/models.config
+````
+4, Check model in tfServing
+http://localhost:8601/v1/models/tomatoes_model
+http://localhost:8601/v1/models/tomatoes_model/versions/1
+5. Run the FastAPI Server using uvicorn
    For this you can directly run it from your main.py or main-tf-serving.py using vscode run option (as shown in the video tutorial)
    OR you can run it from command prompt as shown below,
 
