@@ -1,4 +1,4 @@
-# Potato Disease Classification
+# Tomato Disease Classification
 ![](Website_image.png)
 ## Setup for Python:
 
